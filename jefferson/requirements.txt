@@ -1,0 +1,2 @@
+cstruct==2.1
+python-lzo==1.14
