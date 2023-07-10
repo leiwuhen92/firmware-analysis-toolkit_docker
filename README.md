@@ -22,11 +22,23 @@ psql -U firmadyne -h127.0.0.1 -p5432 -dfirmware
 ## 1、einetd端口转发工具
 	在docker容器内添加端口映射
 	```shell
-	root@a8e4d33280d9:/# vi /etc/rinetd.conf
+	root@30f4fcce93c7:~/firmware-analysis-toolkit# apt install rinetd
+	
+	root@30f4fcce93c7:~/firmware-analysis-toolkit# vi /etc/rinetd.conf
 	0.0.0.0 80 192.168.0.100 80
 
-	root@a8e4d33280d9:/# pkill rinetd   		     # 关闭进程
-	root@a8e4d33280d9:/# rinetd -c /etc/rinetd.conf  # 启动转发
+	root@30f4fcce93c7:~/firmware-analysis-toolkit# pkill rinetd   		       # 关闭进程
+	root@30f4fcce93c7:~/firmware-analysis-toolkit# rinetd -c /etc/rinetd.conf  # 启动转发
+	
+	web访问地址：http://宿主机hostip:8066    # admin/password
+	```
+
+## 2、iptables端口映射
+	在docker容器内（IP：172.17.0.2）添加端口映射
+	```shell
+	root@30f4fcce93c7:~/firmware-analysis-toolkit# iptables -t nat -A POSTROUTING -j MASQUERADE
+	root@30f4fcce93c7:~/firmware-analysis-toolkit# iptables -t nat -A PREROUTING -d 172.17.0.2 -p tcp --dport 80 -j DNAT --to-destination 192.168.0.100:80
+	root@30f4fcce93c7:~/firmware-analysis-toolkit# iptables -t nat -A POSTROUTING -d 192.168.0.100 -p tcp --dport 80 -j SNAT --to 172.17.0.2
 	
 	web访问地址：http://宿主机hostip:8066    # admin/password
 	```
