@@ -15,7 +15,8 @@ docker run -it --rm --privileged -p 8066:80 -v /dev:/dev -v /home/firmware_run/i
 	https://github.com/firmadyne/firmadyne/issues/149  已在 Docker 容器中安装了 firmadyne，并且能够获取网络 IP，但 Netgear 的网页仍然不可见
 
 ## postgres
-```service postgresql start
+```
+service postgresql start
 psql -U firmadyne -h127.0.0.1 -p5432 -dfirmware
 ```
 
