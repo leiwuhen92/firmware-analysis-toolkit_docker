@@ -42,3 +42,8 @@ psql -U firmadyne -h127.0.0.1 -p5432 -dfirmware
 	
 	web访问地址：http://宿主机hostip:8066    # admin/password
 	```
+
+  ## 模拟运行结果
+  ![image](https://github.com/leiwuhen92/firmware-analysis-toolkit_docker/blob/main/document/WNAP320.jpg)
+ 
+	
