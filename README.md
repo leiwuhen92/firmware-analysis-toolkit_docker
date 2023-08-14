@@ -8,11 +8,11 @@ docker run -it --rm --privileged -p 8066:80 -v /dev:/dev -v /home/firmware_run/i
 
 
 🚩 **固件仿真运行报错** 🚩
-	https://github.com/attify/firmware-analysis-toolkit/issues/62
-	https://www.coder.work/article/2603490  postgresql - postgres createuser 使用来自终端的密码
-	https://www.oomake.com/question/6336022  为什么你不能使用“service postgres start”在docker中启动postgres？
-	https://github.com/firmadyne/firmadyne/issues/170    解决:docker运行容器添加--privileged -v /dev:/dev
-	https://github.com/firmadyne/firmadyne/issues/149  已在 Docker 容器中安装了 firmadyne，并且能够获取网络 IP，但 Netgear 的网页仍然不可见
+- https://github.com/attify/firmware-analysis-toolkit/issues/62
+- https://www.coder.work/article/2603490  postgresql - postgres createuser 使用来自终端的密码
+- https://www.oomake.com/question/6336022  为什么你不能使用“service postgres start”在docker中启动postgres？
+- https://github.com/firmadyne/firmadyne/issues/170    解决:docker运行容器添加--privileged -v /dev:/dev
+- https://github.com/firmadyne/firmadyne/issues/149  已在 Docker 容器中安装了 firmadyne，并且能够获取网络 IP，但 Netgear 的网页仍然不可见
 
 ## postgres
 ```
